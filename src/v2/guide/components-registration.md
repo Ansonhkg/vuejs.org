@@ -208,7 +208,9 @@ requireComponent.keys().forEach(fileName => {
   const componentName = upperFirst(
     camelCase(
       // Strip the leading `./` and extension from the filename
-      fileName.replace(/^\.\/(.*)\.\w+$/, '$1')
+      fileName.split('/')
+              .pop()
+              .replace(/\.\w+$/, '')
     )
   )
 
